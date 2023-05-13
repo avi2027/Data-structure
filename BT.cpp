@@ -118,3 +118,13 @@ int main(){
 // 1 2 4 -1 -1 5 -1 -1 3 -1 6 -1 -1
 
 // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
+/*For new rep
+git init
+git add .
+git commit -m "First Commit"
+git push
+git push --set-upstream origin master*/
+/*Existing Rep:
+git add .
+git commit -m "First Commit"
+git push*/
