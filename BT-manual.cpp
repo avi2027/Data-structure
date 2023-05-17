@@ -1,6 +1,7 @@
 
 // Binary Tree implement
 #include<iostream>
+#include<queue>
 using namespace std;
 
 class node{
@@ -12,9 +13,9 @@ class node{
 };
 
 class BinaryTree{
-    public: 
+    public:  
     node *root;
-    node* allnode[6];
+    
     
     BinaryTree(){
         root = NULL;
@@ -29,6 +30,7 @@ class BinaryTree{
         return newNode;
     }
     void build_binary_tree(){
+        node* allnode[6];
         
         for(int i=0; i<6; i++){
             allnode[i] = creatNewNode(i);
@@ -47,33 +49,99 @@ class BinaryTree{
 
         allnode[3]->parent = allnode[2];
         allnode[4]->parent = allnode[2];
+        root = allnode[0];
     }
 
-    void print_tree(){
-        for(int i=0; i<6; i++){
-            int p = -1;
-            int l = -1;
-            int r = -1;
+    void BFS(){
+        queue<node*>q;
+        q.push(root);
+        //q.push(NULL);
 
-            if(allnode[i]->parent != NULL){
-                p = allnode[i]->parent->data;
+        while(!q.empty()){
+            node* temp = q.front();
+            q.pop();
+            int p = -1, l = -1, r = -1;
+            if(temp->left != NULL){
+                l = temp->left->data;
+                q.push(temp->left);
             }
-            if(allnode[i]->left != NULL){
-                l = allnode[i]->left->data;
+            if(temp->right !=NULL){
+                r = temp -> right -> data;
+                q.push(temp -> right);
             }
-            if(allnode[i]->right != NULL){
-                r = allnode[i]->right->data;
+            if(temp->parent != NULL){
+                p = temp->parent->data;
             }
-
-            cout << "Node " <<i<<": parent="<<p<<", left child="<<l<<
-            "right chile="<<r<<"\n";
+            cout <<"Node data: "<<temp->data<<", left child: " << l;
+            cout<<", Right child: "<< r <<", Parent data: "<< p <<endl;
         }
     }
 
+    // DFS visit
+    void DFS_visit(node *a){
+        if(a == NULL){
+            return;
+        }
+        
+        cout <<a->data<<" ";
+        DFS_visit(a->left);
+        DFS_visit(a->right);
+    }
+    // Inorder traversal
+    void inorder(node *a){
+        if(a == NULL){
+            return;
+        }
+        inorder(a->left);
+        cout <<a->data<<" ";        
+        inorder(a->right);
+    }
+
+    // Preorder traversal
+    void preorder(node *a){
+        if(a == NULL){
+            return;
+        }
+
+        cout <<a->data<<" "; 
+        preorder(a->left);              
+        preorder(a->right);
+    }
+
+    // Postorder traversal
+    void postorder(node *a){
+        if(a == NULL){
+            return;
+        }
+
+        postorder(a->left);              
+        postorder(a->right);
+        cout <<a->data<<" "; 
+    }
+
 };
+
 int main(){
     BinaryTree bt;
     bt.build_binary_tree();
-    bt.print_tree();
+    bt.BFS();
+    cout << endl;
+
+    cout << "DFS node data:"<<endl; 
+    bt.DFS_visit(bt.root);
+    cout << endl;
+
+    cout << "Inorder Traversal is: ";
+    bt.inorder(bt.root);
+    cout << endl;
+
+    cout << "Preorder Traversal is: ";
+    bt.preorder(bt.root);
+    cout << endl;
+
+    cout << "Postorder Traversal is: ";
+    bt.postorder(bt.root);
+    cout << endl;
+    cout << endl;
     return 0;
 }
