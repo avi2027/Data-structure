@@ -1,5 +1,5 @@
 #include<iostream>
-#include<conio.h>
+//#include<conio.h>
 using namespace std;
 int binary_search(int arr[], int size, int key);
 int main(){
@@ -9,7 +9,7 @@ int main(){
 	int even_index = binary_search(even, 7, 56);
 	cout << "Index of 34 is: " << even_index << endl;
 
-	getch();
+	//getch();
 	return 0;
 }
 

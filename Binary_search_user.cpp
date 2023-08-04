@@ -1,6 +1,4 @@
-#include<bits/stdc++.h>
 #include<iostream>
-#include<conio.h>
 using namespace std;
 int size,arr[100],key,i;   // global variable
 int binary_search();
@@ -23,7 +21,6 @@ int main()
 	else{
 		cout <<"\tIndex of " << key <<" is: " << element_search << endl;
 	}
-	getch();
 	return 0;
 
 }

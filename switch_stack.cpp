@@ -16,7 +16,8 @@ bool isempty()
 void push(int value)
 {
   if(top==SIZE-1)
-  {    cout<<"Stack is full!\n";
+  {    
+    cout<<"Stack is full!\n";
   }
    else
   {
@@ -52,7 +53,7 @@ void displayStack()
  {
   for(int i=0 ; i<=top; i++)
     cout<<A[i]<<" ";
-   cout<<"\n";
+    cout<<"\n";
 
   }
 
@@ -64,22 +65,22 @@ int main()
  int choice, flag=1, value;
  while( flag == 1)
  {
- cout<<"\n1.PUSH 2.POP 3.SHOW_TOP 4.DISPLAY_STACK 5.EXIT\n";
- cin>>choice; switch (choice)
- {
- case 1: cout<<"Enter Value:\n";
-         cin>>value;
-         push(value);
-         break;
- case 2: pop();
-         break;
- case 3: show_top();
-         break;
- case 4: displayStack();
-         break;
- case 5: flag = 0;
-         break;
- }
+  cout<<"\n1.PUSH 2.POP 3.SHOW_TOP 4.DISPLAY_STACK 5.EXIT\n";
+  cin>>choice; switch (choice)
+    { 
+        case 1: cout<<"Enter Value:\n";
+                cin>>value;
+                push(value);
+                break;
+        case 2: pop();
+                break;
+        case 3: show_top();
+                break;
+        case 4: displayStack();
+                break;
+        case 5: flag = 0;
+                break;
+    }
  }
   return 0;
 }

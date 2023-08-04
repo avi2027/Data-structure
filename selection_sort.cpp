@@ -1,6 +1,4 @@
-#include<bits/stdc++.h>
 #include<iostream>
-#include<conio.h>
 using namespace std;
 void printline();
 int main()
@@ -37,7 +35,7 @@ int main()
 	cout << endl;
 	printline();
 
-	getch();
+	//getch();
 	return 0;
 }
 

@@ -1,6 +1,6 @@
-#include<bits/stdc++.h>
+//#include<bits/stdc++.h>
 #include<iostream>
-#include<conio.h>
+//#include<conio.h>
 using namespace std;
 void printline();
 int main()
@@ -42,7 +42,7 @@ int main()
 	cout << "Total outer loop count "<< count << endl;
 	cout << "Total inner loop count "<< count_1 << endl;
 
-	getch();
+	//getch();
 	return 0;
 }
 

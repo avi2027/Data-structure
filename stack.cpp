@@ -1,6 +1,4 @@
-#include<bits/stdc++.h>
 #include<iostream>
-#include<conio.h>
 #include<stdlib.h>
 using namespace std;
 #define MAX 4
@@ -22,9 +20,7 @@ int main()
 	cout << "Pop Iteam " << pop() << endl;
 	push(15);
 	push(40);
-	
 
-	getch();
 	return 0;
 }
 
